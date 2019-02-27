@@ -58,6 +58,41 @@ class ShorterClassComponentWithProps extends React.Component<ExampleProps> {
 }
 
 /**
+ * In order to compose our components, we will eventually need to nest them
+ * inside other components. When we put one element inside another like this:
+ * 
+ * <a> <b /> </a>
+ * 
+ * We can say the element b is a child of the element a. But how do we actually
+ * allow for arbitrary children inside our components? Good news: it's just
+ * another prop! Check the example below.
+ * 
+ * An important observation is that we didn't need to specify
+ * 'children' as one of the expected props for the 'StylishText' component. 
+ * Potentially, any React component might receive props, so the 
+ * type declaration for the React.FC type automatically 
+ * considers an optional 'children' prop by using an intersection type
+ *
+ * More on intersection types can be found at:
+ * https://www.typescriptlang.org/docs/handbook/advanced-types.html
+ */
+
+const StylishText: React.FC = ({ children }) => (
+  <p style={{ border: '1px solid purple', padding: '10px' }}>
+    {children}
+  </p>
+)
+
+const ComponentUsingStylishText: React.FC = () => (
+  <div>
+    <h1>Below's some stylish text</h1>
+    <StylishText>
+      Yeah...
+    </StylishText>
+  </div>
+)
+
+/**
  * We've declared props that components EXPECT, but we haven't actually
  * seen what good are they for. In order to pass props to a rendering
  * component, we use a notation that's very similar to passing tags in HTML.
@@ -68,6 +103,11 @@ class ShorterClassComponentWithProps extends React.Component<ExampleProps> {
  * The way to do it in that notation is as follows:
  * 
  * React.createElement(FunctionComponentWithProps, {a: 2, b: 3}, [])
+ * 
+ * Remember to try out the other components shown in this lesson, and feel free
+ * to fiddle with them. If you have a question about whether something can be done,
+ * try it out and see it for yourself! Of course, that's not to say you shouldn't 
+ * ask for help. You can totally do that too.
  */
 
 export const Lesson2: React.FC = () => (
