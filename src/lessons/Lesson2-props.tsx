@@ -10,7 +10,7 @@ import * as React from "react";
  * of the function that defines it, as it can be seen below:
  */
 
-type ExampleProps = {
+interface ExampleProps {
     a: number;
     b: number;
 }
@@ -81,7 +81,7 @@ export const Lesson2: React.FunctionComponent = () => (
  * (but you still need to use quotes).
  */
 
-type ExerciseProps = {}
+interface ExerciseProps {}
 
 const ExerciseComponent: React.FunctionComponent<ExerciseProps> =
     (props) => (
