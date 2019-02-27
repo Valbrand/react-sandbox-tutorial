@@ -11,12 +11,12 @@ import * as React from "react";
  */
 
 type ExampleProps = {
-    a: number;
-    b: number;
+  a: number;
+  b: number;
 }
 
-const FunctionComponentWithProps : React.FC<ExampleProps> = (props) => (
-    <h1>Function component: {props.a} + {props.b} = {props.a + props.b}!</h1>
+const FunctionComponentWithProps: React.FC<ExampleProps> = (props) => (
+  <h1>Function component: {props.a} + {props.b} = {props.a + props.b}!</h1>
 )
 
 /**
@@ -26,11 +26,11 @@ const FunctionComponentWithProps : React.FC<ExampleProps> = (props) => (
  */
 
 class ClassComponentWithProps extends React.Component<ExampleProps> {
-    render() {
-        return (
-            <h1>Class component: {this.props.a} + {this.props.b} = {this.props.a + this.props.b}!</h1>
-        )
-    }
+  render() {
+    return (
+      <h1>Class component: {this.props.a} + {this.props.b} = {this.props.a + this.props.b}!</h1>
+    )
+  }
 }
 
 /**
@@ -42,19 +42,19 @@ class ClassComponentWithProps extends React.Component<ExampleProps> {
  * in the component declaration):
  */
 
-const ShorterFunctionComponentWithProps : React.FC<ExampleProps> = 
-    ({ a, b }) => (
-        <h1>Shorter function component: {a} + {b} = {a + b}!</h1>
-    )
+const ShorterFunctionComponentWithProps: React.FC<ExampleProps> =
+  ({ a, b }) => (
+    <h1>Shorter function component: {a} + {b} = {a + b}!</h1>
+  )
 
 class ShorterClassComponentWithProps extends React.Component<ExampleProps> {
-    render() {
-        const { a, b } = this.props
+  render() {
+    const { a, b } = this.props
 
-        return (
-            <h1>Shorter class component: {a} + {b} = {a + b}!</h1>
-        )
-    }
+    return (
+      <h1>Shorter class component: {a} + {b} = {a + b}!</h1>
+    )
+  }
 }
 
 /**
@@ -71,7 +71,7 @@ class ShorterClassComponentWithProps extends React.Component<ExampleProps> {
  */
 
 export const Lesson2: React.FC = () => (
-    <FunctionComponentWithProps a={2} b={3}/>
+  <FunctionComponentWithProps a={2} b={3} />
 )
 
 /**
@@ -81,9 +81,11 @@ export const Lesson2: React.FC = () => (
  * (but you still need to use quotes).
  */
 
-type ExerciseProps = {}
+type ExerciseProps = {
+  // Add the prop types here
+}
 
 const ExerciseComponent: React.FC<ExerciseProps> =
-    (props) => (
-        <h1>Write here!</h1>
-    )
+  (props) => (
+    <h1>Write here!</h1>
+  )
