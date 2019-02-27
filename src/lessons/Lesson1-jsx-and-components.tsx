@@ -5,14 +5,14 @@ import * as React from "react";
  * well-defined components, each with its own responsibility. There
  * are two ways of defining components, as shown below.
  *
- * The first way is called a Function Component. Function components
- * were called Stateless Functional Components (or SFCs) in the past,
- * so don't freak out if you see one of those in the wild.
+ * The first way is called a Function Component (or FCs). 
+ * Function components were called Stateless Functional Components 
+ * (or SFCs) in the past, so don't freak out if you see one of those in the wild.
  * Function components are very simple, as they are just functions
  * that return a React element (more on that below).
  */
 
-const FunctionComponent: React.FunctionComponent = () => (
+const FunctionComponent: React.FC = () => (
   <h1>I'm a very simple function component.</h1>
 );
 
@@ -34,7 +34,7 @@ class ClassComponent extends React.Component {
  * empty map that is passed as the second argument to the createElement function):
  */
 
-const WeirdFunctionComponent: React.FunctionComponent = () => (
+const WeirdFunctionComponent: React.FC = () => (
   React.createElement('h1', {}, ["I'm a (not so) simple function component"])
 )
 
@@ -52,11 +52,11 @@ class WeirdClassComponent extends React.Component {
  * be using it anymore in the future)
  */
 
-const ComponentWithCode: React.FunctionComponent = () => (
+const ComponentWithCode: React.FC = () => (
   <h1>1 + 1 = {1 + 1}!</h1>
 )
 
-const ComponentWithCodeAndCreateElement: React.FunctionComponent = () => (
+const ComponentWithCodeAndCreateElement: React.FC = () => (
   React.createElement('h1', {}, ['1 + 1 = ', 1 + 1, '!'])
 )
 
@@ -80,6 +80,6 @@ export const Lesson1 = () => <FunctionComponent />;
  * but practice is the only thing that makes our brains internalize stuff so ¯\_(ツ)_/¯
  */
 
-const ExerciseComponent: React.FunctionComponent = () => (
+const ExerciseComponent: React.FC = () => (
   <h1>Write here!</h1>
 )

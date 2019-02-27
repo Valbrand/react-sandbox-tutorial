@@ -15,6 +15,6 @@ import * as lessons from './lessons/lessons'
  */
 
 ReactDOM.render(
-    <lessons.Lesson1 />,
+    <lessons.Lesson3 />,
     document.getElementById('root'),
 )

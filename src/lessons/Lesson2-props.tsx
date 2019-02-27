@@ -4,18 +4,18 @@ import * as React from "react";
  * Components can receive data as input to their render function.
  * We call this data a component's props (shorthand for 'properties'), and
  * when using TypeScript we can specify the expected type of props in the
- * type parameters of the React.FunctionComponent type.
+ * type parameters of the React.FC type.
  * 
  * In a function component, the props are received as the first argument
  * of the function that defines it, as it can be seen below:
  */
 
-interface ExampleProps {
+type ExampleProps = {
     a: number;
     b: number;
 }
 
-const FunctionComponentWithProps : React.FunctionComponent<ExampleProps> = (props) => (
+const FunctionComponentWithProps : React.FC<ExampleProps> = (props) => (
     <h1>Function component: {props.a} + {props.b} = {props.a + props.b}!</h1>
 )
 
@@ -42,7 +42,7 @@ class ClassComponentWithProps extends React.Component<ExampleProps> {
  * in the component declaration):
  */
 
-const ShorterFunctionComponentWithProps : React.FunctionComponent<ExampleProps> = 
+const ShorterFunctionComponentWithProps : React.FC<ExampleProps> = 
     ({ a, b }) => (
         <h1>Shorter function component: {a} + {b} = {a + b}!</h1>
     )
@@ -70,7 +70,7 @@ class ShorterClassComponentWithProps extends React.Component<ExampleProps> {
  * React.createElement(FunctionComponentWithProps, {a: 2, b: 3}, [])
  */
 
-export const Lesson2: React.FunctionComponent = () => (
+export const Lesson2: React.FC = () => (
     <FunctionComponentWithProps a={2} b={3}/>
 )
 
@@ -81,9 +81,9 @@ export const Lesson2: React.FunctionComponent = () => (
  * (but you still need to use quotes).
  */
 
-interface ExerciseProps {}
+type ExerciseProps = {}
 
-const ExerciseComponent: React.FunctionComponent<ExerciseProps> =
+const ExerciseComponent: React.FC<ExerciseProps> =
     (props) => (
         <h1>Write here!</h1>
     )
